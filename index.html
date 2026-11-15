@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Max folio</title>
+<style>
+:root{--ink:#f5f2ef;--muted:#b9aaa3;--accent:#ff704d;--accent2:#ffb36b;--paper:#0b0b0d;--card:#151416;--line:#302a2a;--soft:#211b1b;font-family:Inter,"Segoe UI",system-ui,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#32160f 0,transparent 38%),var(--paper);color:var(--ink);line-height:1.65}
+a{color:var(--accent2)}header{display:flex;justify-content:space-between;align-items:center;padding:16px 5vw;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;background:#0b0b0deF;backdrop-filter:blur(14px)}
+.logo{font-weight:900;font-size:1.55rem;letter-spacing:-.06em;cursor:pointer}.logo b{color:var(--accent)}
+nav{display:flex;gap:8px;flex-wrap:wrap}nav button{margin:0}
+button,.btn{font:inherit;font-weight:700;border:0;border-radius:999px;padding:11px 20px;cursor:pointer;background:linear-gradient(110deg,var(--accent),var(--accent2));color:#160b08;text-decoration:none;display:inline-block;transition:transform .25s,filter .25s}
+button:hover,.btn:hover{transform:translateY(-3px);filter:brightness(1.08)}button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
+main{max-width:1120px;margin:0 auto;padding:42px 5vw 80px}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:44px 0 60px;min-height:420px}
+.hero h1{font-size:clamp(2.5rem,7vw,5.7rem);line-height:.98;margin:0 0 20px;letter-spacing:-.065em}.hero p{font-size:1.08rem;max-width:58ch;color:var(--muted)}
+.photo{width:100%;aspect-ratio:1;border-radius:28px;object-fit:cover;border:1px solid #604035;box-shadow:0 24px 80px #0009}
+.card{background:linear-gradient(145deg,#191719,#111012);border:1px solid var(--line);border-radius:22px;padding:clamp(20px,4vw,34px);margin:22px 0;box-shadow:0 16px 50px #0003}
+.card h2{margin:0 0 14px;font-size:clamp(1.4rem,3vw,2rem);letter-spacing:-.04em}.about{display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:center}
+.about img{width:100%;border-radius:18px;aspect-ratio:1;object-fit:cover}.tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--accent)}
+.tl li{margin:0 0 18px;position:relative}.tl li::before{content:"";position:absolute;left:-29px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--accent2);box-shadow:0 0 18px var(--accent)}
+.tl small,.role{color:var(--accent2);font-weight:800;letter-spacing:.08em;text-transform:uppercase}.tags{display:flex;flex-wrap:wrap;gap:9px;padding:0;list-style:none;margin:0}.tags li{background:#2b1d1a;color:#ffc09c;padding:7px 14px;border:1px solid #563126;border-radius:99px;font-size:.9rem}
+label{display:block;font-weight:700;margin:14px 0 4px}input,textarea{width:100%;font:inherit;padding:11px 13px;border:1px solid var(--line);border-radius:12px;background:#0d0c0e;color:var(--ink)}textarea{min-height:90px;resize:vertical}
+.narrow{max-width:480px;margin:0 auto}.err{color:#ff8d79;font-weight:700;min-height:1.4em}.link{background:var(--soft);padding:14px;border-radius:12px;word-break:break-all;margin-top:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px}.proj{border:1px solid var(--line);border-radius:18px;padding:20px;background:linear-gradient(145deg,#1b1718,#111012);transition:transform .3s,border-color .3s}.proj:hover{transform:translateY(-6px);border-color:var(--accent)}
+.proj h3{margin:0 0 6px;font-size:1.2rem}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.preview{width:90px;height:90px;border-radius:50%;object-fit:cover;background:var(--soft)}
+.role{margin:0 0 12px}.job{font-size:clamp(1.3rem,3vw,2rem);font-weight:800;margin:0 0 12px;color:var(--ink)!important}
+.preview-box{border:1px dashed var(--line);border-radius:18px;padding:8px 24px 24px;margin:12px 0 28px;background:#0b0b0d}.preview-box .photo{max-width:260px;justify-self:center}
+.reveal{animation:rise .75s cubic-bezier(.2,.7,.2,1) both}@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:720px){header{align-items:flex-start;gap:12px;flex-direction:column}nav{width:100%}nav button{font-size:.9rem;padding:9px 14px}.hero,.about{grid-template-columns:1fr;gap:24px}.hero{padding:28px 0 40px}.photo{max-width:300px}.card{border-radius:17px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+.btn.secondary{background:#241b19;color:#ffd0b2;border:1px solid #684033}
+.detail-text{white-space:normal;color:var(--muted);line-height:1.9}
+button:disabled{opacity:.38;cursor:not-allowed;transform:none}
+.hero .card{margin:0}
+</style>
+</head>
+<body>
+<header><div class="logo" id="logo">Max<b>folio</b></div><nav id="nav"></nav></header>
+<main id="app"></main>
+<script src="script.js"></script>
+</body>
+</html>
